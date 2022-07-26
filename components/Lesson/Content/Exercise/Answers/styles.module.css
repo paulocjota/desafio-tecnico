@@ -1,0 +1,56 @@
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.itemContainer{
+
+}
+
+.itemContainer[data-selected="true"]{
+    background-color: rgb(180, 180, 180);
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: .3s;
+    padding: 0.5rem 1rem;
+}
+
+.item:hover{
+    background-color: var(--bg-hover);
+}
+
+.iconWrapper{
+    width: 1.5rem;
+    height: 1.5rem;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.icon{
+    width: 100%;
+}
+
+.buttonCorrectionContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttonCorrection{
+    border: none;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.buttonCorrection:hover{
+    background-color: var(--bg-hover);
+}

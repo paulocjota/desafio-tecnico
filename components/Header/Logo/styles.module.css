@@ -1,0 +1,12 @@
+.link{
+    cursor: pointer;
+}
+
+.logo{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #333;
+    margin-left: 1.5rem;
+    display: inline-block;
+}

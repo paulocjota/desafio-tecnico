@@ -1,34 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+ <a href="#sobre">Sobre</a> •
+ <a href="#requerimentos">Requerimentos</a> •
+ <a href="#primeiros-passos">Primeiros passos</a> •
+ <a href="#tecnologias">Tecnologias</a> •
+ <a href="#decisoes-de-design">Decisões de design</a> •
+ <a href="#preview">Preview</a> •
+ <a href="#author">Autor</a>
+</p>
 
-## Getting Started
+## Sobre
 
-First, run the development server:
+Desafio técnico para concorrer a vaga Frontend na empresa Me Salva!
+
+## Requerimentos
+
+É necessário ter o [node](https://nodejs.org/en/) na versão 16 ou superior. Para verificar digite no terminal:
+
+```bash
+node -v
+```
+
+## Primeiros passos
+
+1. Clone o repositório em um diretório do seu computador executando o comando abaixo:
+```bash
+https://github.com/paulocjota/desafio-tecnico.git
+```
+
+2. Instale as depêndencias necessárias do projeto:
+```bash
+npm install
+```
+
+3. Rodando o projeto:
+
+build de desenvolvimento. Ao alterar o código cada mudança ocorre atualizando a página porém a experiência de navegação é lenta:
 
 ```bash
 npm run dev
-# or
-yarn dev
+```
+OU<br><br>
+build de produção. Ao alterar o código cada mudança se torna necessário buildar novamente através do comando <b>npm run build</b> porém a experiência de navegação é otimizada:
+
+```bash
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visualizar o resultado.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Tecnologias
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+O projeto foi feito utilizando o framework [Next.js](https://nextjs.org/). Esta decisão se deve ao fato de que o framework citado permite a geração de páginas estáticas em tempo de build com informações recuperadas da API Backend. De todos os benefícios os que se destacam são:
+* Redução de requisições ao banco de dados: Com a geração de páginas estáticas, quando um usuário acessa a página em vez de ocorrer uma (ou mais) requisições ao banco de dados para retornar as respectivas informações é fornecida uma página estática.
+* Redução no tempo de respostas: Como uma página estática é requisitada não há processamento de dados no backend (queries de banco de dados e etc...) o que diminui significativamente o tempo de resposta.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* Otimização para os motores de busca: Em uma aplicação JavaScript tradicional como por exemplo utilizando React as informações relevantes para os motores de busca como o título da página e meta description só são geradas em tempo de execução do lado cliente, ou seja, no browser do usuário. Como os motores de busca leem apenas o conteúdo HTML e não interpretam JavaScript é como se as informações relevantes para o motor de busca não existissem. O Next.js resolve esse problema pois ele gera páginas estáticas já com todas as informações necessárias no momento da build.
 
-## Learn More
+### Depêndencias
 
-To learn more about Next.js, take a look at the following resources:
+[heroicons](https://github.com/tailwindlabs/heroicons): Icones em formato SVG utilizados na aplicação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[axios](https://axios-http.com/ptbr/docs/intro): Cliente HTTP para efetuar requisições para a API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[DOMPurify](https://github.com/cure53/DOMPurify): Sanitizador de string HTML para evitar ataques XSS
 
-## Deploy on Vercel
+## Decisões de design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Organização de arquivos dos componentes
+Foi criado um diretório com nome do componente, dentro arquivo <b>index.js</b> com o código do componente e um arquivo <b>styles.module.css</b> referente aos estilos do componente. Ex.:<br><br>
+MyComponent/index.js<br>
+MyComponent/styles.module.css<br><br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Para componentes mais complexos foram criados componentes filhos seguindo o mesmo padrão e imbuídos ao componente pai.
+
+Componentes que são ou podem ser utlizados em diversos contextos foram colocados dentro do diretório <b>common</b>.
+<br><br>
+### Nomenclatura de classes CSS
+
+camelCase, de maneira simplificada já que o próprio Next.js permite a criação de arquivos de estilo com o prefixo module trazendo o benefício de que as classes de um componente não colidam com as de outro mesmo que tenham o mesmo nome.
+
+### Funções e classes JavaScript
+
+Funções e classes JavaScript foram colocadas dentro do diretório <b>utils</b> e importadas no componente quando necessário.
+
+
+## Preview
+
+Acesse o projeto hospedado em um servidor online clicando [aqui](https://localhost:3000)!
+
+## Autor
+[paulocjota](https://github.com/paulocjota)

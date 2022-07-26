@@ -1,0 +1,12 @@
+.a{
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    transition-property: background-color;
+    transition-duration: .3s;
+    margin: 1rem;
+    display: inline-block;
+}
+
+.a:hover{
+    background-color: var(--bg-hover);
+}

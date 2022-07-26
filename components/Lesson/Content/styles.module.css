@@ -1,0 +1,10 @@
+.content{
+    padding: 1rem;
+    width: 100%;
+}
+
+@media(min-width: 640px){
+    .content{
+        padding: 2rem;
+    }
+}

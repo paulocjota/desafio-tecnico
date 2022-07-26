@@ -1,0 +1,19 @@
+.list{
+    border-bottom: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+}
+
+@media(min-width: 1024px){
+    .list{
+        border: unset;
+        border-right: 1px solid gray;
+        padding: 2rem 1rem;
+    }
+}
+
+/* Remove a linha vertical do primeiro elemento da lista */
+.list > a:first-of-type .item .typeIconWrapper:before{
+    content: unset;
+}

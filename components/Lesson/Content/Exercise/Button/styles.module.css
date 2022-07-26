@@ -1,0 +1,16 @@
+.button{
+    background-color: var(--color-primary);
+    padding: 0.5rem;
+    display: block;
+    margin-bottom: .5rem;
+    min-width: 320px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: .15s;
+}
+
+.button:hover{
+    background-color: var(--bg-hover);
+}
