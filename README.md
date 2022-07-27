@@ -10,7 +10,7 @@
 
 ## Sobre
 
-Desafio técnico para concorrer a vaga Frontend na empresa Me Salva!
+Desafio técnico para concorrer a vaga!
 
 ## Requerimentos
 
