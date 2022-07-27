@@ -51,11 +51,11 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visu
 
 ## Tecnologias
 
-O projeto foi feito utilizando o framework [Next.js](https://nextjs.org/). Esta decisão se deve ao fato de que o framework citado permite a geração de páginas estáticas em tempo de build com informações recuperadas da API Backend. De todos os benefícios os que se destacam são:
-* Redução de requisições ao banco de dados: Com a geração de páginas estáticas, quando um usuário acessa a página em vez de ocorrer uma (ou mais) requisições ao banco de dados para retornar as respectivas informações é fornecida uma página estática.
-* Redução no tempo de respostas: Como uma página estática é requisitada não há processamento de dados no backend (queries de banco de dados e etc...) o que diminui significativamente o tempo de resposta.
+O projeto utilizou o framework [Next.js](https://nextjs.org/). Esta decisão se deve ao fato de que o framework citado permite a geração de páginas estáticas em tempo de build com informações recuperadas da API Backend. De todos os benefícios, os que se destacam são:
+* Redução de requisições ao banco de dados: É fornecida uma página estática quando um usuário acessa a página em vez de ocorrer uma (ou mais) requisições ao banco de dados para retornar às respectivas informações.
+* Redução no tempo de respostas: Como uma página estática é requisitada, não há processamento de dados no backend (queries de banco de dados etc...), o que diminui significativamente o tempo de resposta.
 
-* Otimização para os motores de busca: Em uma aplicação JavaScript tradicional como por exemplo utilizando React as informações relevantes para os motores de busca como o título da página e meta description só são geradas em tempo de execução do lado cliente, ou seja, no browser do usuário. Como os motores de busca leem apenas o conteúdo HTML e não interpretam JavaScript é como se as informações relevantes para o motor de busca não existissem. O Next.js resolve esse problema pois ele gera páginas estáticas já com todas as informações necessárias no momento da build.
+* Otimização para os motores de busca: Em uma aplicação JavaScript tradicional, como com React, as informações relevantes para os motores de busca como o título da página e meta description só são geradas em tempo de execução do lado cliente, ou seja, no browser do usuário. Como os motores de busca leem apenas o conteúdo HTML e não interpretam JavaScript, as informações relevantes para o motor de busca são tratadas como se não existissem. O Next.js resolve esse problema, pois esse framework gera páginas estáticas já com todas as informações necessárias no momento da build.
 
 ### Depêndencias
 
