@@ -1,0 +1,27 @@
+{
+    "meta": {
+        "title": "Desafio - Web",
+        "description": "Esse desafio foi criado para candidatos à nossa vaga de pessoa desenvolvedora web."
+    },
+    "result": {
+        "title": "Material de apoio",
+        "type": "text",
+        "slug": "material-de-apoio",
+        "description": "Historicamente, a hegemonia de poder no mundo mudou de mãos com certa frequência. No âmbito da geopolítica atual se faz necessário compreender as mais recentes organizações políticas internacionais, também chamadas de Ordens Mundiais...",
+        "children": [
+            {
+                "type": "text",
+                "data": {
+                    "html": "<p>Faça download do nosso material de apoio abaixo:</p>"
+                }
+            },
+            {
+                "type": "pdf",
+                "data": {
+                    "link": "https://cdn.example.com/uploads/medium/attachment/anF0eE8yUDJ3VE1pcmY2ZnV5UVEwUTE4MDkyMDIwVDE4MjY%3D.pdf"
+                }
+            }
+        ]
+    },
+    "pagination": null
+}

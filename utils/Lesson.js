@@ -13,7 +13,7 @@ export class Lesson{
         const lessonsWithoutCurrent = lessons.filter( value => value.slug !== slug)
         const currentLesson = {
             slug: slug,
-            visualized: true
+            seen: true
         }
         const data = JSON.stringify([...lessonsWithoutCurrent, currentLesson])
         window.localStorage.setItem(this.getLocalStorageKey(), data)
@@ -21,7 +21,7 @@ export class Lesson{
 
     static isSeen(slug){
         const lessons = this.getLessons()
-        return lessons.some(item => item.slug === slug && item.visualized === true)
+        return lessons.some(item => item.slug === slug && item.seen === true)
     }
 
     static reset(){
