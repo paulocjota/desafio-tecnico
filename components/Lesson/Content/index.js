@@ -4,10 +4,15 @@ import Exercise from '../Content/Exercise'
 import Text from '../Content/Text'
 import Title from './Title'
 import Pdf from './Pdf'
+import React from 'react'
+import { LessonContentContext } from '../../../contexts/LessonContentContext'
 
-function Content({children}){
+function Content({children, slug, type}){
+
     return (
-        <div className={styles.content}>{children}</div>
+        <LessonContentContext.Provider value={{ type: type, slug: slug }}>
+            <div className={styles.content}>{children}</div>
+        </LessonContentContext.Provider>
     )
 }
 

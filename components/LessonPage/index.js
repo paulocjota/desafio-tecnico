@@ -15,10 +15,6 @@ export default function LessonPage({list, slug, lesson}) {
         setMounted(true)
     }, [])
 
-    useEffect(() => {
-        LessonClass.setSeen(slug)
-    }, [router.asPath])
-
     return (
         <Page title={`${lesson?.title} - ${list.title}`} description={lesson?.description ? lesson?.description : list.description}>
             {mounted &&
@@ -36,7 +32,7 @@ export default function LessonPage({list, slug, lesson}) {
                         ))}
                     </Lesson.List>
                     {lesson?.children &&
-                        <Lesson.Content>
+                        <Lesson.Content type={lesson.type}  slug={lesson.slug}>
                                 <Lesson.Content.Title>{lesson.title}</Lesson.Content.Title>
                                 {lesson.children.map( (item, index) => {
                                     const Component = getContentComponentFromType(item.type)

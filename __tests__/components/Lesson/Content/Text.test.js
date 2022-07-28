@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Text from '../../../../components/Lesson/Content/Text'
+import { LessonContentContext } from '../../../../contexts/LessonContentContext'
 
 describe('Text Component', () => {
     it('expect not having an img tag with onerror attribute (XSS)', () => {
@@ -10,7 +11,11 @@ describe('Text Component', () => {
                 html
             }
         }
-        const {container} = render(<Text content={content} />)
+        const {container} = render(
+            <LessonContentContext.Provider value={{ type: 'slut', slug: 'hello-world'}}>
+                <Text content={content} />
+            </LessonContentContext.Provider>
+        )
         const imgWithOnError = container.querySelector('img[onerror]')
         expect(imgWithOnError).toBeNull()
     })

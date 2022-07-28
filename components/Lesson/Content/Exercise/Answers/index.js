@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import fetchLesson from "../../../../../utils/fetchLesson"
 import PurifiedHtml from "../../../../common/PurifiedHtml"
 import { useRouter } from "next/router"
+import { Lesson } from '../../../../../utils/Lesson'
 
 export default function Answers({answers, slug}){
     const [selected, setSelected] = useState(false)
@@ -33,6 +34,7 @@ export default function Answers({answers, slug}){
     }
 
     async function handleClickShowCorrection(){
+        Lesson.setSeen(slug)
         const response = await fetchLesson(slug)
         setExerciseData(response.data)
     }

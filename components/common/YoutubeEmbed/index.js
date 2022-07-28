@@ -1,7 +1,11 @@
+import { useContext } from 'react'
+import { LessonContentContext } from '../../../contexts/LessonContentContext'
 import getStringBetween from '../../../utils/getStringBetween'
+import { Lesson } from '../../../utils/Lesson'
 import styles from './styles.module.css'
 
 export default function YoutubeEmbed({ link }){
+    const {slug} = useContext(LessonContentContext)
     const videoId = getStringBetween(link, '?v=')
 
     return (
@@ -19,6 +23,7 @@ export default function YoutubeEmbed({ link }){
                     picture-in-picture
                 "
                 allowFullScreen
+                onPlay={Lesson.setSeen(slug)}
             ></iframe>
         </div>
     )
