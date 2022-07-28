@@ -87,7 +87,7 @@ Funções e classes JavaScript foram colocadas dentro do diretório <b>utils</b>
 
 ## Preview
 
-Acesse o projeto hospedado em um servidor online clicando [aqui](https://localhost:3000)!
+Acesse o projeto hospedado em um servidor online clicando [aqui](https://desafio-tecnico-two.vercel.app)!
 
 ## Autor
 [paulocjota](https://github.com/paulocjota)
