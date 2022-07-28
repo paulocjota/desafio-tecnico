@@ -16,7 +16,7 @@ export default function LessonPage({list, slug, lesson}) {
     }, [])
 
     return (
-        <Page title={`${lesson?.title} - ${list.title}`} description={lesson?.description ? lesson?.description : list.description}>
+        <Page title={`${lesson?.title ?? 'Desafio Tecnico'} - ${list.title}`} description={lesson?.description ? lesson?.description : list.description}>
             {mounted &&
                 <Lesson>
                     <Lesson.List>
