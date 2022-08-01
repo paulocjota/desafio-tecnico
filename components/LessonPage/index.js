@@ -5,11 +5,9 @@ import getContentComponentFromType from '../../utils/getContentComponentFromType
 import {Lesson as LessonClass} from '../../utils/Lesson'
 import fetchList from '../../utils/fetchList'
 import fetchLesson from '../../utils/fetchLesson'
-import { useRouter } from 'next/router'
 
 export default function LessonPage({list, slug, lesson}) {
     const [mounted, setMounted] = useState(false)
-    const router = useRouter()
 
     useEffect(() => {
         setMounted(true)
@@ -22,7 +20,7 @@ export default function LessonPage({list, slug, lesson}) {
                     <Lesson.List>
                         {(list?.children ?? []).map((item, index) => (
                             <Lesson.List.Item
-                                key={index}
+                                key={'lesson-item-' + index}
                                 title={item.title}
                                 type={item.type}
                                 slug={item.slug}
@@ -36,7 +34,7 @@ export default function LessonPage({list, slug, lesson}) {
                                 <Lesson.Content.Title>{lesson.title}</Lesson.Content.Title>
                                 {lesson.children.map( (item, index) => {
                                     const Component = getContentComponentFromType(item.type)
-                                    return <Component key={index} content={item} slug={slug} />
+                                    return <Component key={`lesson-content-item-${slug}_${item.type}_${index}`} content={item} slug={slug} />
                                 })}
                         </Lesson.Content>
                     }
